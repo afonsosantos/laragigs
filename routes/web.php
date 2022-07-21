@@ -16,6 +16,10 @@ use App\Http\Controllers\ListingController;
 |
 */
 
+/**
+ * Listings
+ */
+
 // All Listings
 Route::get('/', [ListingController::class, 'index']);
 
@@ -24,6 +28,9 @@ Route::get('/listings/create', [ListingController::class, 'create'])->middleware
 
 // Store Listing Data
 Route::post('/listings', [ListingController::class, 'store'])->middleware('auth');
+
+// Manage Listings
+Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
 
 // Show Edit Form
 Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->middleware('auth');
@@ -36,6 +43,10 @@ Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->mid
 
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
+
+/**
+ * Login and Registration
+ */
 
 // Show Register Create Form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');

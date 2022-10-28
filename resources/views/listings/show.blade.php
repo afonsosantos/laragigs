@@ -36,7 +36,8 @@
             </div>
         </x-card>
 
-        {{-- <x-card class="mt-4 p-2 flex space-x-6">
+        @if($listing->user_id == auth()->user()->id)
+        <x-card class="mt-4 p-2 flex space-x-6">
             <a href="/listings/{{ $listing->id }}/edit">
                 <i class="fa-solid fa-pencil"></i> Edit
             </a>
@@ -49,6 +50,7 @@
                     <i class="fa-solid fa-trash"></i> Delete
                 </button>
             </form>
-        </x-card> --}}
+        </x-card>
+        @endif
     </div>
 </x-layout>

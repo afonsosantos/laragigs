@@ -65,4 +65,9 @@ class UserController extends Controller
 
         return back()->withErrors(['email' => 'Invalid credentials'])->onlyInput('email');
     }
+
+    public function reset(Request $request)
+    {
+        return view('users.reset');
+    }
 }

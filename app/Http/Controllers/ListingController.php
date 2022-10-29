@@ -44,10 +44,6 @@ class ListingController extends Controller
             'description' => 'required'
         ]);
 
-        if (!str_contains($formFields['website'], 'http://') || !str_contains($formFields['website'], 'https://')) {
-            $formFields['website'] = 'http://' .  $formFields['website'];
-        }
-
         if ($request->hasFile('logo')) {
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
@@ -82,10 +78,6 @@ class ListingController extends Controller
             'tags' => 'required',
             'description' => 'required'
         ]);
-
-        if (!str_contains($formFields['website'], 'http://') || !str_contains($formFields['website'], 'https://')) {
-            $formFields['website'] = 'http://' .  $formFields['website'];
-        }
 
         if ($request->hasFile('logo')) {
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
